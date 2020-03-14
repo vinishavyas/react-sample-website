@@ -418,3 +418,6 @@ header.shrink .logo{width:230px;}
 .review-outer .rating-block i.active {
   color: #ffa41f;
 }
+.srv-validation-message{
+  color:#df3f3f;
+}
