@@ -98,7 +98,7 @@ class Register extends Component {
                                                         <label>Re-enter password</label>
                                                         <input name="confirm_password" className="form-control" type="password" placeholder="Re-enter password" onChange={this.changeInput}/>
                                                         { this.validator.message('confirm_password', this.state.confirm_password, 'required') }
-                                                        { this.state.confirm_message != "" ? <div class="srv-validation-message">Password and confirm password must be same.</div> : '' }
+                                                        { this.state.confirm_message !== "" ? <div class="srv-validation-message">Password and confirm password must be same.</div> : '' }
                                                     </div>
                                                 </div>
                                                 <div className="col-md-6">
@@ -240,7 +240,7 @@ class Register extends Component {
             // rerender to show messages for the first time
             // you can use the autoForceUpdate option to do this automatically`
         } else {
-            if(this.state.password != this.state.confirm_password) {
+            if(this.state.password !== this.state.confirm_password) {
                 this.setState({
                     confirm_message : "1"
                 })
@@ -282,24 +282,6 @@ class Register extends Component {
             [e.target.name]: e.target.value,
         });
     }
-
-    // resetForm = () => {
-    //     this.setState({
-    //         organisation_name : "",
-    //         contact_name : "",
-    //         email : "",
-    //         telephone_number : "",
-    //         password : "",
-    //         confirm_password : "",
-    //         alert : "",
-    //         alertType : "",
-    //         address_1 : "",
-    //         address_2 : "",
-    //         city : "",
-    //         country : "",
-    //         postcode : ""
-    //     })
-    // }
 }
 
 export default Register;
